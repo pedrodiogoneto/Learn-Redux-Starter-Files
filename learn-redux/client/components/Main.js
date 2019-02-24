@@ -1,12 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-function Main() {
-    return (
-        <h1>
-            <Link to={'/'}>Reduxtagram</Link>
-        </h1>
-    )   
-}
+const Main = React.createClass({
+    render() {
+        console.log(this)
+        return (
+            <div>
+                <h1>
+                    <Link to={'/'}>Reduxtagram</Link>
+                </h1>
+                {React.cloneElement(this.props.children, this.props)}
+            </div>
+        )   
+    }
+})
 
 export default Main
